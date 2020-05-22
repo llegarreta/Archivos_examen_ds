@@ -5,3 +5,10 @@ dim(muestra09)
 #Cambiamos nombres
 colnames(muestra09)<-c("nif", "nombre", "genero")
 colnames(muestra09)
+table(muestra09$genero)
+table(muestra09$nombre)
+columnagenero<-muestra09$genero
+#Creamos nueva columna
+muestra09$genero_imp<-columnagenero
+
+
