@@ -16,6 +16,8 @@ regexp <- "([[:digit:]]{8})([[:alpha:]]{1})"
 grepl(pattern = regexp, x = muestra25$nif)
 
 dim(muestra25)
+
+#no me sale lo del dni
 =======
 #cambiamos la variable genero (no me da tiempo)
 >>>>>>> rama-genero
