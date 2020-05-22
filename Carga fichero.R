@@ -2,3 +2,7 @@ setwd("C:/Users/mikel/OneDrive - Mondragon Unibertsitatea/MU - One Drive/BDA 1/D
 load("C:/Users/mikel/OneDrive - Mondragon Unibertsitatea/MU - One Drive/BDA 1/Data Science/Git/Examen_DS/Archivos_examen_ds-master/muestra25.RData")
 
 dim(muestra25) #308084 3
+
+names(muestra25)[1] = "nif"
+names(muestra25)[2] = "nombre"
+names(muestra25)[3] = "genero"
