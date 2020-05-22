@@ -6,9 +6,9 @@ df<-load("muestra22.RData")
 dim(muestra22)
 str(muestra22)
 
-
-
-
+names(muestra22)[1]<-"nif"
+names(muestra22)[2]<-"nombre"
+names(muestra22)[3]<-"genero"
 
 
 
