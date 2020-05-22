@@ -72,6 +72,7 @@ dim(muestra35)
 dim(muestra)
 dim(a)
 
+which()
 
 a <- which(muestra35$Nombre =="JOSE")
 muestra35[a,4] = "V"
@@ -107,9 +108,23 @@ a <- which(muestra35$Nombre =="CRISTINA")
 muestra35[a,4] = "M"
 a <- which(muestra35$Nombre =="CARMEN")
 muestra35[a,4] = "M"
-a <- which(muestra35$Nombre =="ANGEL")
+a <- which(muestra35$Nombre =="CARLOS")
 muestra35[a,4] = "V"
-
+a <- which(muestra35$Nombre =="FRANCISCO JAVIER")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="PEDRO")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="LUIS")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="ALBERTO")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="JOSE ANTONIO")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="MIGUEL")
+muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="ISABEL")
+muestra35[a,4] = "M"
+unique(cantidad_nombres$Nombre)
 
 
 
