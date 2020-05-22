@@ -1,4 +1,4 @@
-
+library(dplyr)
 
 # EXAMEN DS ---------------------------------------------------------------
 directorio <- setwd('C:/Users/auror/Desktop/RETOS/RETO 4/DS/Examen_DS/Archivos_examen_ds')
@@ -8,7 +8,7 @@ colnames(muestra17)
 str(muestra17)
 
 #El fichero tiene 310110 registros y 3 variables
-
+colnames(muestra17) <-c('NIF', 'Nombre', 'Genero')
 table(muestra17$Genero)
 genero <- as.data.frame(table(muestra17$Genero))
 
@@ -44,13 +44,14 @@ muestrita<-full_join(muestra_chicas3, muestra_chicos3, by='Nombre')
 colnames(muestrita)<-c('NIF', 'Nombre', 'genero_mujer', 'n_mujer', 'Nif_dos', 'genero_hombre', 'n_hombre')  
 muestrita <- select(muestrita, -Nif_dos)
 
-muestrita<-if(muestrita$n_mujer>muestrita$n_hombre==T){
-  (muestrita$genero_imp == 'M')
-}else{
-  (muestrita$genero_imp=='V')
-}  
 #OTRA FORMA
-muestrita$genero_imp2[muestrita$n_mujer>muestrita$n_hombre]<-'V'
-muestrita$genero_imp2[muestrita$n_mujer<muestrita$n_hombre]<-'M'
+muestrita$genero_imp[muestrita$n_mujer>muestrita$n_hombre]<-'V'
+muestrita$genero_imp[muestrita$n_mujer<muestrita$n_hombre]<-'M'
+colnames(muestrita)
 
+muestra17<-select(muestrita, NIF, Nombre, genero_imp2)
+
+
+#sOLUCIONAMOS COSAS RARAS
+gsub(pattern="[[:punct:]]", muestra17$Nombre, replacement=" ")
 #LISTO
