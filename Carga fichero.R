@@ -5,3 +5,16 @@ dim(muestra04)
 #las dimensiones del archivo son 332086 x 3  (3 columnas 332086 instancias)
 
 names(muestra04)<-c("nif","nombre","genero")
+
+#limpiamos los nombres
+muestra04$nombre<-str_to_upper(muestra04$nombre)
+library(tidyverse)
+
+muestra<-muestra04
+muestra[muestra$genero=="",which(colnames(muestra)=="genero")]<-NA
+muestra$val<-ifelse(is.na(muestra$genero),0,1)
+
+spread(muestra,)
+muestra<-spread(muestra, "genero", "val")
+
+Pruebita4<- reshape(muestra, timevar = "genero", idvar = "", direction = "wide")
