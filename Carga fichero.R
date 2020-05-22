@@ -8,3 +8,6 @@ load('muestra42.RData')
 
 # Mirar las dimensiones del fichero ---------------------------------------
 dim(muestra42) # Los datos tienen 300685filas y 3 variables
+
+# Cambiamos los nombres de las columnas -----------------------------------
+colnames(muestra42)<-c('nif','nombre','genero') #Mediante colnames cambiamos los nombres de las columnas
