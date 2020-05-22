@@ -19,7 +19,6 @@ muestra21[muestra21 == 0] <- NA
 muestra21[muestra21 == ""] <- NA
 dim(muestra21)
 
-
 #vamos a ver si hay guiones, barrabajas o valores extraños
 stringr::str_subset(muestra21$nif, "(\\_|\\-)[a-zA-Z]*\\.(csv|ods)$")
 
@@ -63,17 +62,53 @@ vector<-as.vector(which(muestra2, arr.ind=FALSE))
 muestra21<-muestra21[c(vector),]
 
 
+chicos<- muestra21%>%
+  
+  filter(genero=="V")
+
+#filtramos
+
+chicas<- muestra21%>%
+  filter(genero=="M")
+
+
+vector_c <- chicas$nombre
+frecuencia_chicas <- sort(table(vector_c))
+
+#tabla frecuencias para ambos
+(tabla_frecuencias_chicas <- as.data.frame(frecuencia_chicas))
+
+
+vector_c <- chicos$nombre
+frecuencia_chicos <- sort(table(vector_c))
+(tabla_frecuencias_chicos <- as.data.frame(frecuencia_chicos))
 
 
 
-#vamos a cambiar los missinng por NAs, para eliminarlos
-muestra21$genero[muestra21$genero=='']<-NA
-quitasna<-na.omit(muestra21)
+frecuencias<-
+  full_join(tabla_frecuencias_chicas, tabla_frecuencias_chicos, by=c("vector_c"="vector_c"))
+
+#cambaimos nombre columnas
+colnames(frecuencias)<- c("nombre", "M", "V")
+
+frecuencias[is.na(frecuencias)] <- 0 
+
+frecuencias$genero_imp[frecuencias$V>frecuencias$M]="V"
 
 
-#sumamos columna
-generos<-muestra21 %>%
-  mutate(genero_imp=paste(nombre,genero,sep = '_'))
 
-freqnombres<-generos %>% 
-  count(genero_imp)
+
+frecuencias$genero_imp[frecuencias$M>frecuencias$V]="M"
+
+muestra21$nombre<-toupper(muestra21$nombre)
+frecuencias$nombre<-toupper(frecuencias$nombre)
+
+tabla_final<-full_join(muestra21, frecuencias, by="nombre")
+
+
+
+
+
+
+
+tabla_final<-tabla_final %>% filter(!is.na(genero_imp))
