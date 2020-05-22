@@ -6,3 +6,6 @@ View(muestra03)
 
 # el fichero tiene 306085 filas y 3 columnas
 # DNI? Nombre y Género
+
+#Modificamos el nombre de las variables
+colnames(muestra03) <- c("NIF","NOMBRE", "GENERO")
