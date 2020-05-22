@@ -20,8 +20,7 @@ muestra29 <- muestra29%>%
   filter(nif_tf==T)
 
 muestra29 <- muestra29[,-4]
-<<<<<<< HEAD
-=======
+
 
 
 #genero
@@ -54,4 +53,3 @@ genero <- genero%>%
   filter(genero_imp!="")
 
 View(genero)
->>>>>>> rama-genero
