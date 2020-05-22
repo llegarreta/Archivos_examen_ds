@@ -84,7 +84,7 @@ h_b<-comparacion[which(comparacion$n.h>comparacion$n.m),]
 h_b$genero_imp.m<-"V"
 
 ambos<-comparacion[which(comparacion$n.h==comparacion$n.m),]
-ambos$genero_imp.m<-"v" #criterio propio: he mirado los nombres
+ambos$genero_imp.m<-"V" #los que tienen la misma frecuencia en mujer y hombre, he mirado los nombres y voy a asignar una V
 
 corregido<-rbind(m_b,h_b, ambos)
 names(corregido)
