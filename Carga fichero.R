@@ -12,3 +12,8 @@ dim(muestra14)
 
 str(muestra14)
 #contiene 3 variables de tipo character
+
+
+# Modificar nombres -------------------------------------------------------
+
+colnames(muestra14)<-c("nif","nombre","genero")
