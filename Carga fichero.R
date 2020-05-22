@@ -72,10 +72,18 @@ dim(muestra35)
 dim(muestra)
 dim(a)
 
-which()
 
-a <- which(muestra35$Nombre =="JOSE")
+# Todos aquellos que tengan Maria, Jose o Juan como nombre o primer nombre
+# Se imputan
+
+a <- which(grepl("MARIA", muestra35$Nombre)==T)
+muestra35[a,4] = "M"
+a <- which(grepl("JOSE", muestra35$Nombre)==T)
 muestra35[a,4] = "V"
+a <- which(grepl("JUAN", muestra35$Nombre)==T)
+muestra35[a,4] = "V"
+
+
 a <- which(muestra35$Nombre =="ANTONIO")
 muestra35[a,4] = "V"
 a <- which(muestra35$Nombre =="MARIA")
@@ -100,8 +108,6 @@ a <- which(muestra35$Nombre =="DAVID")
 muestra35[a,4] = "V"
 a <- which(muestra35$Nombre =="FERNANDO")
 muestra35[a,4] = "V"
-a <- which(muestra35$Nombre =="MARI CARMEN")
-muestra35[a,4] = "M"
 a <- which(muestra35$Nombre =="ANGEL")
 muestra35[a,4] = "M"
 a <- which(muestra35$Nombre =="CRISTINA")
@@ -124,7 +130,9 @@ a <- which(muestra35$Nombre =="MIGUEL")
 muestra35[a,4] = "V"
 a <- which(muestra35$Nombre =="ISABEL")
 muestra35[a,4] = "M"
-unique(cantidad_nombres$Nombre)
 
+# Eliminamos los NAs y sus instancias
 
+which(is.na(muestra35$genero_imp)==T )
+muestra35 <- muestra35[-(which(is.na(muestra35$genero_imp)==T )),]
 
