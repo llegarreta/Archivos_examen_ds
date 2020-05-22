@@ -9,3 +9,12 @@ dim(muestra05)
 
 
 names(muestra05)<-c("nif", "nombre", "genero")
+
+regexp <- "([[:digit:]]{8})([[:alpha:]]{1})"
+
+muestra05[,"nif"]<-grepl(pattern = regexp, x = muestra05$nif)
+
+muestra05
+
+
+
