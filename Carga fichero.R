@@ -6,3 +6,5 @@ dim(muestra25) #308084 3
 names(muestra25)[1] = "nif"
 names(muestra25)[2] = "nombre"
 names(muestra25)[3] = "genero"
+
+#cambiamos la variable genero (no me da tiempo)
