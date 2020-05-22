@@ -17,20 +17,25 @@ names (muestra10)[3] = "genero"
 #eliminaremos del dataset original todos los registros que no tienen el formato adecuado para esta variable (8 dígitos y una letra)
 
 nif <-muestra10[1]
-regexp <- "([[:digit:]]{8}) ([[:alpha:]]{1})"
+regexp <-  grepl('[[:digit:]]{8}[[:alpha:]]{1}', muestra10$nif)
 grepl(pattern = regexp, x =muestra10$nif) #no cumple pq no tiene dos digitos
+
+cumple <- which(regexp == T)
+final <- muestra10[cumple, ]
 
 #eliminar las filas false
 
 #imputar género
-unique(muestra10$genero)
+dim(muestra10)
 
-muestra10%>%
+muestra10<-mutate(muestra10,frecuencia=1)
+
+mujeres<-muestra10%>%
   filter(genero=="M")%>%
-  group_by(nombre)
+  group_by(nombre)%>%
+  summarise(frec=sum(frecuencia))
 
-
-
+todos<-merge(mujeres,hombres)
 
 
 
