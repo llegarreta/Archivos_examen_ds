@@ -12,9 +12,9 @@ names(muestra22)[1]<-"nif"
 names(muestra22)[2]<-"nombre"
 names(muestra22)[3]<-"genero"
 
-patata <- "([[:digit:]]{8})([[:alpha:]]{1})"
 
-<<<<<<< HEAD
+
+
 #miramos la moda
 table(muestra22$genero)
 muestra22[muestra22$genero=="",which(colnames(muestra22)=="genero")]<-NA
@@ -31,9 +31,11 @@ muestra22%>%
 
 muestra22%>%
   filter(genero == 'X')
-=======
+
+
+patata <- "([[:digit:]]{8})([[:alpha:]]{1})"
 patata1<-grepl(pattern = patata, x = muestra22$nif)#vemos que en los FALSE no se cumple la condicion que hemos puesto en patata
 
 str_replace(muestra22[,1],"([[:digit:]]{8})([[:alpha:]]{1})",TRUE)
 
->>>>>>> rama-nif
+
