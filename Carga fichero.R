@@ -1,18 +1,26 @@
 
 load("C:/Users/Daniel Puente/Desktop/Examen_DS/Archivos_examen_ds/muestra35.RData")
 
+# Comprobamos las dimensiones del dataset
 dim(muestra35)
+
+# Cambimos los nombres
+
 names(muestra35)[1] <- "nif"
 names(muestra35)[2] <- "Nombre"
 names(muestra35)[3] <- "genero"
 names(muestra35)
+
+# Imputamos por NA los valores erroneos
 
 View(muestra35)
 muestra35[muestra35 == ""] <- NA
 muestra35[muestra35 == 0] <- NA
 str(muestra35)
 
-regexp <- "([[:digit:]]{8})"
+# Dejamos los usuarios con 8 digitos y una letra en el nif
+
+regexp <- "([[:digit:]]{8})" 
 a <- which(grepl(regexp, muestra35$nif)==T)
 a <- muestra35[a,]
 dim(a)
@@ -22,10 +30,6 @@ dim(muestra35)
 regexp <- "([A-Z]{1})"
 muestra35 <- muestra35[which(grepl(regexp, muestra35$nif)==T),]
 View(muestra35)
-
-
-
-
 
 
 
