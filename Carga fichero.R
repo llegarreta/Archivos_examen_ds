@@ -53,4 +53,18 @@ sum(is.na(muestra03$genero_imp))
 
 
 
+# Imputaciones NIF --------------------------------------------------------
+
+muestra03$NIF <-   toupper(muestra03$NIF)
+muestra03$NIF[gsub("^[:alpha:]","",muestra03$NIF)]
+muestra03$NIF[!str_detect(muestra03$NIF, pattern = "[:digit:]{8}[:upper:]{1}")] <- NA
+muestra03$NIF
+
+library(dplyr)
+muestra03 <- muestra03 %>%
+  filter(is.na(NIF)==FALSE)
+
+dim(muestra03)
+
+# se nos queda una dimensión de 277771 filas y 4 columnas
 
