@@ -14,5 +14,8 @@ muestra19$NIF<-str_extract(muestra19$nif, cambio)
 
 muestra19<-filter(muestra19,NIF!=is.na(NIF))
 muestra19<-muestra19[,1:3]
+<<<<<<< HEAD
 
 dim(muestra19)
+=======
+>>>>>>> rama-nif
