@@ -6,10 +6,25 @@ df<-load("muestra22.RData")
 dim(muestra22)
 str(muestra22)
 
+#cambiamos el nmbre de las variables
 names(muestra22)[1]<-"nif"
 names(muestra22)[2]<-"nombre"
 names(muestra22)[3]<-"genero"
 
 
+#miramos la moda
+table(muestra22$genero)
+muestra22[muestra22$genero=="",which(colnames(muestra22)=="genero")]<-NA
+muestra22[muestra22$genero=="X",which(colnames(muestra22)=="genero")]<-NA
+muestra22[muestra22$genero=="E",which(colnames(muestra22)=="genero")]<-NA
+muestra22[is.na(muestra22$genero),3]<-"V"
+#imputamos por la moda ya que la mayoria de las instacias estan sin informar
+muestra22%>%
+  filter(genero == 'M')
+muestra22%>%
+  filter(genero == 'V')
+.muestra22%>%
+  filter(genero == 'E')
 
-
+muestra22%>%
+  filter(genero == 'X')
