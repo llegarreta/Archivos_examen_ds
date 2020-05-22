@@ -48,4 +48,6 @@ tabla_final$genero_imputado[tabla_final$n_V>tabla_final$n_M] <- 'V'
 tabla_final <- tabla_final[,-c(4,5)]
 
 tabla_final <- tabla_final[!is.na(tabla_final$genero_imputado),]
+#Como no podemos imputar el género en determinadas situaciones, es mejor eliminar
+#esos registros
 
