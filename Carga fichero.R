@@ -99,10 +99,17 @@ a <- which(muestra35$Nombre =="DAVID")
 muestra35[a,4] = "V"
 a <- which(muestra35$Nombre =="FERNANDO")
 muestra35[a,4] = "V"
+a <- which(muestra35$Nombre =="MARI CARMEN")
+muestra35[a,4] = "M"
+a <- which(muestra35$Nombre =="ANGEL")
+muestra35[a,4] = "M"
+a <- which(muestra35$Nombre =="CRISTINA")
+muestra35[a,4] = "M"
+a <- which(muestra35$Nombre =="CARMEN")
+muestra35[a,4] = "M"
+a <- which(muestra35$Nombre =="ANGEL")
+muestra35[a,4] = "V"
 
-
-
->>>>>>> rama-genero
 
 
 
