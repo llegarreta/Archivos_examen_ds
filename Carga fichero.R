@@ -50,7 +50,7 @@ muestra03$genero_imp[str_detect(muestra03$NOMBRE, pattern = "O$|EL$|JULIO|JOSE|C
 # tambien las que finalicen por A y AR
 muestra03$genero_imp[str_detect(muestra03$NOMBRE, pattern = "A$|AR$|MARIA|ANA|ROSARIO|ROCIO")] <- "M"
 
-# Muchos nombres vascos de chica acaban en NE
+# Muchos nombres vascos de chica acaban en NE, por ejemplo irune
 muestra03$genero_imp[str_detect(muestra03$NOMBRE, pattern = "NE$|EN$|TXE$")] <- "M"
 
 # Y los de chicos tienen tambien algunas terminaciones populares
