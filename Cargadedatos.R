@@ -6,3 +6,10 @@ names(muestra18)[1] = "nip"
 names(muestra18)[2] = "nombre"
 names(muestra18)[3] = "genero"
 
+cambio_nif <- "([[:digit:]]{8})([[:alpha:]]{1})"
+grepl(pattern = cambio_nif, x = muestra18$nif)
+muestra2<-grepl(pattern = cambio_nif, x = muestra18$nif)
+muestra3<-merge(muestra2, muestra18)
+vector<-as.vector(which(muestra2, arr.ind=FALSE))
+muestra28<-muestra18[c(vector),]
+
