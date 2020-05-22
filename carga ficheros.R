@@ -6,3 +6,6 @@ load("muestra05.RData")
 dim(muestra05)
 
 # el fichero tiene las siguentes dimensiones: 293111 , 3
+
+
+names(muestra05)<-c("nif", "nombre", "genero")
