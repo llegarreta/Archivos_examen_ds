@@ -93,4 +93,4 @@ muestra07<-merge(muestra07,corregido, by="nombre")
 names(muestra07)
 muestra07<-muestra07[,-c(4,6,7)]
 names(muestra07) [4]<- "genero_imp"
->>>>>>> rama-genero
+
