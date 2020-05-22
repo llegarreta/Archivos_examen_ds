@@ -12,3 +12,5 @@ muestra31<-muestra31 %>%
 filter(a==TRUE)
 
 muestra31<-muestra31[,-4]
+dim(muestra31)
+#294427      3
