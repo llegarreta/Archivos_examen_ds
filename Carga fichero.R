@@ -44,10 +44,20 @@ muestra21_1<-muestra21 %>%
   )
 
 funcion = START %R% "[0-9]"  %R% any_char(1,8) %R% "[A-Z]" %R% END
-nif_21<-stri_subset(muestra21$nif,regex = funcion)
+stri_subset (as.da(muestra21$nif,regex = funcion))
+
+muestra21$nif[muestra21$nif == stri_subset(muestra21$nif,regex = funcion)]
 
 
 
-muestra21<-mutate(muestra21, nif_21)
+
+
+
+
+
+
+
+
+
 
 
