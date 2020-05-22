@@ -9,9 +9,13 @@ names(muestra25)[1] = "nif"
 names(muestra25)[2] = "nombre"
 names(muestra25)[3] = "genero"
 
+<<<<<<< HEAD
 muestra25$nif[str_detect(muestra25$nif, pattern = "00000")] <- "1111"
 
 regexp <- "([[:digit:]]{8})([[:alpha:]]{1})"
 grepl(pattern = regexp, x = muestra25$nif)
 
 dim(muestra25)
+=======
+#cambiamos la variable genero (no me da tiempo)
+>>>>>>> rama-genero
