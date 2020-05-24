@@ -13,10 +13,10 @@ colnames(muestra37) <- c("nif","nombre","genero")
 View(muestra37)
 
 #nifs con 8 letras y 1 numero
-patron = "([[:digit:]]{8})([[:alpha:]]{1})"
-nifs=str_extract(muestra37$nif, patron)
+patata = "([[:digit:]]{8})([[:alpha:]]{1})"
+nifs=str_extract(muestra37$nif, patata)
 
-#Lo añado a dataframe
+#Lo junto con muestra37
 nifs=data.frame(nifs)
 muestra37=inner_join(nifs, muestra37, by = c("nifs" = "nif"))
 
