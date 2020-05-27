@@ -6,6 +6,7 @@ dim(muestra13)
 
 colnames(muestra13)<-c("nif","nombre","genero")
 
+
 # Analisis genero
 
 mujeres<-df_clientes[df_clientes$genero=='M',3]
@@ -18,3 +19,9 @@ genero<-merge(mujeres,hombres,all.x=T,all.y=T)
 genero[is.na(genero)]=0
 genero$genero_imp[genero$n_M>genero$n_V]="M"
 genero$genero_imp[genero$n_V>genero$n_M]="V"
+
+# analisis genero
+muestra13<-muestra13[str_detect(muestra13$nif,"^([:digit:]{8})([:alpha:]{1})$"),]
+dim(muestra13)
+
+# El fichero tiene 275190 registros tras el análisis del nif
