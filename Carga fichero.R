@@ -43,3 +43,14 @@ muestra02$genero_imp[str_detect(muestra02$nombre, pattern = "O$|EL$|JULIO|JOSE|C
 df$genero<-ifelse(df_M)
 muestra02$genero_imp[str_detect(muestra02$nombre, pattern = "A$|AR$|MARIA|ANA|ROSARIO|ROCIO")] <- "M"
 
+# PROCESAMIENTO NIF -------------------------------------------------------
+regexp <- "([[:digit:]]{8})([[:alpha:]]{1})"
+g <- as.vector(grepl(pattern = regexp, x = df$nif))
+df <- df %>% 
+  mutate(nif_imp = g)
+
+df <- df %>% 
+  filter(df$nif_imp == "TRUE")
+
+df <- df[,-5]
+
